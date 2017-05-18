@@ -4,9 +4,17 @@ $host = 'localhost';
 $username = 'root';
 $password = 'teste';
 
-$connect = mysqli_connect($host, $username, $password) or print(mysql_error());
-print ("conexão rolou");
+$connect = mysqli_connect($host, $username, $password, 'testes');
 
+if (!$connect){
+    die("Not found:" . mysql_error());
+}
+
+/*$sql_conection_db = mysql_select_db('testes', $connect);
+
+if (!$sql_conection_db){
+    die ("Não foi possível utilizar este banco de dados".mysql_error());
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +42,36 @@ print ("conexão rolou");
             </nav>
         </div>   
         <div class="container">
+            <?php
+                    $sql = "SELECT id, titulo, noticias, link FROM noticias";
+                    $result = ($connect->query($sql));
+                    $row = $result->fetch_assoc();
+                    /*if ($result->num_rows > 0){
+                        while ($row = $result->fetch_assoc()){
+                            echo "id : " . $row["id"];
+                        }
+                    }else{
+                        echo ("0 results");
+                    }*/
+                    echo (" <div class='row'>"); 
+                    for ( $i = 0; $i < 1; $i++){
+                       echo(" <div class='col s12 m6'>
+                              <div class='card darken-1'>
+                              <div class='card-content'>
+                              <span class='card-title'>".$row['titulo']."</span>
+                              <p>Aqui vai um lorem ipsum</p>
+                              </div>
+                              <div class='card-action'>
+                              <a href='".$row['link']."'>Ler Matéria</a>
+                              <a class='waves-effect waves-light btn'>#tag</a>
+                              </div>
+                              </div>
+                              </div>
+                        ");
+                    }
+            ?>
             <div class="row">
+                
                 <div class="col s12 m6">
                     <div class="card darken-1">
                         <div class="card-content">
