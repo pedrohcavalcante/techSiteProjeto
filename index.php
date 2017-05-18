@@ -45,7 +45,7 @@ if (!$sql_conection_db){
             <?php
                     $sql = "SELECT id, titulo, noticias, link FROM noticias";
                     $result = ($connect->query($sql));
-                    $row = $result->fetch_assoc();
+                   // $row = $result->fetch_assoc();
                     /*if ($result->num_rows > 0){
                         while ($row = $result->fetch_assoc()){
                             echo "id : " . $row["id"];
@@ -53,23 +53,32 @@ if (!$sql_conection_db){
                     }else{
                         echo ("0 results");
                     }*/
-                    echo (" <div class='row'>"); 
+                    echo (" <div class='row'>");
+                    while ($row = $result->fetch_assoc()){
+                     
                     for ( $i = 0; $i < 1; $i++){
-                       echo(" <div class='col s12 m6'>
-                              <div class='card darken-1'>
-                              <div class='card-content'>
-                              <span class='card-title'>".$row['titulo']."</span>
-                              <p>".$row['noticias']."</p>
-                              </div>
-                              <div class='card-action'>
-                              <a href='".$row['link']."'>Ler Matéria</a>
-                              <a class='waves-effect waves-light btn'>#tag</a>
-                              </div>
-                              </div>
-                              </div>
+                        echo("<div class='col s12 m6'>
+                            <div class='card darken-1'>
+                                <div class='card-content'>
+                                    <span class='card-title'>".$row['titulo']."</span>
+                                    <p>".$row['noticias']."</p>
+                                </div>
+                                <div class='card-action'>
+                                    <a href='".$row['link']."'>Ler Matéria</a>
+                                    <a class='waves-effect waves-light btn'>#tag</a>
+                                </div>
+                            </div>
+                        </div>
                         ");
                     }
+                    
+                    }
+                    echo("</div>");
             ?>
         </div>      
     </body> 
 </html>
+
+<?php
+mysqli_close($connect);
+?>
