@@ -1,3 +1,14 @@
+<?php
+
+$host = 'localhost';
+$username = 'root';
+$password = 'teste';
+
+$connect = mysqli_connect($host, $username, $password) or print(mysql_error());
+print ("conexão rolou");
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
