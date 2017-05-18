@@ -59,7 +59,7 @@ if (!$sql_conection_db){
                               <div class='card darken-1'>
                               <div class='card-content'>
                               <span class='card-title'>".$row['titulo']."</span>
-                              <p>Aqui vai um lorem ipsum</p>
+                              <p>".$row['noticias']."</p>
                               </div>
                               <div class='card-action'>
                               <a href='".$row['link']."'>Ler Matéria</a>
@@ -70,111 +70,6 @@ if (!$sql_conection_db){
                         ");
                     }
             ?>
-            <div class="row">
-                
-                <div class="col s12 m6">
-                    <div class="card darken-1">
-                        <div class="card-content">
-                            <span class="card-title">Aqui vai o título</span>
-                            <p>Aqui vai um lorem ipsum</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Ler Matéria</a>
-                            <a class="waves-effect waves-light btn">#tag</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card darken-1">
-                        <div class="card-content">
-                            <span class="card-title">Aqui vai o título</span>
-                            <p>Aqui vai um lorem ipsum</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Ler Matéria</a>
-                            <a class="waves-effect waves-light btn">#tag</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card darken-1">
-                        <div class="card-content">
-                            <span class="card-title">Aqui vai o título</span>
-                            <p>Aqui vai um lorem ipsum</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Ler Matéria</a>
-                            <a class="waves-effect waves-light btn">#tag</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card darken-1">
-                        <div class="card-content">
-                            <span class="card-title">Aqui vai o título</span>
-                            <p>Aqui vai um lorem ipsum</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Ler Matéria</a>
-                            <a class="waves-effect waves-light btn">#tag</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card darken-1">
-                        <div class="card-content">
-                            <span class="card-title">Aqui vai o título</span>
-                            <p>Aqui vai um lorem ipsum</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Ler Matéria</a>
-                            <a class="waves-effect waves-light btn">#tag</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card darken-1">
-                        <div class="card-content">
-                            <span class="card-title">Aqui vai o título</span>
-                            <p>Aqui vai um lorem ipsum</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Ler Matéria</a>
-                            <a class="waves-effect waves-light btn">#tag</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card darken-1">
-                        <div class="card-content">
-                            <span class="card-title">Aqui vai o título</span>
-                            <p>Aqui vai um lorem ipsum</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Ler Matéria</a>
-                            <a class="waves-effect waves-light btn">#tag</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card darken-1">
-                        <div class="card-content">
-                            <span class="card-title">Aqui vai o título</span>
-                            <p>Aqui vai um lorem ipsum</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Ler Matéria</a>
-                            <a class="waves-effect waves-light btn">#tag</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>      
-    </body>
+    </body> 
 </html>
