@@ -21,12 +21,14 @@ if (!$sql_conection_db){
     <head>
         <title>Login</title>
         <meta charset="utf-8">
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
         <link rel="stylesheet" href="admincss/adminCss.css">
-         <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
          <script language="javascript" type="text/javascript">
             function validar(){
                 var nome = formLogin.usuario.value;
@@ -34,7 +36,6 @@ if (!$sql_conection_db){
 
                 if (nome == ""){
                     formLogin.usuario.focus();
-                    Materialize.toast('usuário não existe', 4000);
                     alert('Preencha o campo com seu nome');
                 }
                 if (senha == ""){
@@ -44,6 +45,9 @@ if (!$sql_conection_db){
          </script>
     </head>
     <body>
+    <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <div class="body_login">
             <div class="row">
                 <form class="col s12" name="formLogin" method="POST">
