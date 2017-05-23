@@ -1,21 +1,3 @@
-<?php
-
-$host = 'localhost';
-$username = 'root';
-$password = 'teste';
-
-$connect = mysqli_connect($host, $username, $password, 'testes');
-
-if (!$connect){
-    die("Not found:" . mysql_error());
-}
-
-/*$sql_conection_db = mysql_select_db('testes', $connect);
-
-if (!$sql_conection_db){
-    die ("Não foi possível utilizar este banco de dados".mysql_error());
-}*/
-?>
 <!DOCTYPE>
 <html>
     <head>
@@ -34,12 +16,10 @@ if (!$sql_conection_db){
                 var nome = formLogin.usuario.value;
                 var senha = formLogin.senha.value;
 
-                if (nome == ""){
-                    formLogin.usuario.focus();
-                    alert('Preencha o campo com seu nome');
-                }
-                if (senha == ""){
-
+                if (nome == "" || senha == ""){
+                    alert('Erro no preenchimento do usuário/senha');
+                }else{
+                    location.href='login.php';
                 }
             }
          </script>
