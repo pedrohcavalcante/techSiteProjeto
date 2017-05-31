@@ -3,7 +3,7 @@
 $host = 'localhost';
 $username = 'root';
 $password = 'teste';
-
+//https://www.youtube.com/watch?v=Zjz4hy6iG1o
 $connect = mysqli_connect($host, $username, $password, 'testes');
 
 if (!$connect){
@@ -65,7 +65,7 @@ if (!$sql_conection_db){
                                 </div>
                                 <div class='card-action'>
                                     <a href='".$row['link']."'>Ler Matéria</a>
-                                    <a class='waves-effect waves-light btn'>#tag</a>
+                                    <a class='chip'>#tag</a>
                                 </div>
                             </div>
                         </div>

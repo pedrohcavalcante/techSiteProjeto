@@ -18,6 +18,7 @@
 
                 if (nome == "" || senha == ""){
                     alert('Erro no preenchimento do usuário/senha');
+                    getEle
                 }else{
                     location.href='login.php';
                 }
@@ -34,7 +35,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="icon_prefix" type="text" class="validate" name="usuario">
+                            <input id="icon_prefix" type="text" class="validate" name="usuario" required>
                             <label for="icon_prefix">Login</label>
                         </div>
                     </div>
