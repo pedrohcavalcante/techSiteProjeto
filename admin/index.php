@@ -1,3 +1,37 @@
+<?php
+//https://www.youtube.com/watch?v=Zjz4hy6iG1o
+    //echo "entrou";
+    include("conexao.php");
+
+    if(isset($_POST['usuario']) && strlen($_POST['usuario']) > 0){
+        //echo "isset user && strlen > 0";
+        if(!isset($_SESSION))
+            session_start();
+            //echo "session start";
+
+        $_SESSION['usuario'] = $mysqli->escape_string($_POST['usuario']);
+        $_SESSION['senha'] = md5($_POST['senha']);
+        //echo "session user session senha";
+        $sql_code = "SELECT id_admin, nome_admin, senha_admin FROM noticias.admin WHERE nome_admin = '$_SESSION[usuario]'";
+        $sql_query = $mysqli->query($sql_code) or die ($mysqli->error);
+        $dado = $sql_query->fetch_assoc();
+        $total = $sql_query->num_rows;
+
+        if($total == 0){
+            $erro[] = "opa. esse usuario nao pertence a nenhum admin";
+        }else{
+            if ($dado['senha_admin'] == $_SESSION['senha']){
+                $_SESSION['admin'] = $dado['id_admin'];
+                //echo "senha dado == senha session";
+            }else{
+                $erro[] = "senha incorreta";
+            }
+        }
+        if (!isset($erro)){
+            echo "<script>location.href = 'opainel.php';</script>"; 
+        }
+    }
+?>
 <!DOCTYPE>
 <html>
     <head>
@@ -11,19 +45,6 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-         <script language="javascript" type="text/javascript">
-            function validar(){
-                var nome = formLogin.usuario.value;
-                var senha = formLogin.senha.value;
-
-                if (nome == "" || senha == ""){
-                    alert('Erro no preenchimento do usuário/senha');
-                    getEle
-                }else{
-                    location.href='login.php';
-                }
-            }
-         </script>
     </head>
     <body>
     <!--Import jQuery before materialize.js-->
@@ -31,7 +52,7 @@
       <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <div class="body_login">
             <div class="row">
-                <form class="col s12" name="formLogin" method="POST">
+                <form class="col s12" name="formLogin" method="POST" action="">
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
@@ -46,7 +67,7 @@
                             <label for="vpn_key">Senha</label>
                         </div>
                     </div>
-                    <button type='submit' class='waves-effect waves-light btn right' onclick='validar()' value='Login'>Login</button>
+                    <button type='submit' class='waves-effect waves-light btn right' value='Login'>Login</button>
                 </form>
             </div>
         </div>

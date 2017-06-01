@@ -1,20 +1,5 @@
 <?php
-
-$host = 'localhost';
-$username = 'root';
-$password = 'teste';
-//https://www.youtube.com/watch?v=Zjz4hy6iG1o
-$connect = mysqli_connect($host, $username, $password, 'testes');
-
-if (!$connect){
-    die("Not found:" . mysql_error());
-}
-
-/*$sql_conection_db = mysql_select_db('testes', $connect);
-
-if (!$sql_conection_db){
-    die ("Não foi possível utilizar este banco de dados".mysql_error());
-}*/
+include("admin/conexao.php")
 ?>
 
 <!DOCTYPE html>
