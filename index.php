@@ -8,6 +8,7 @@ include("admin/conexao.php")
         <meta charset="utf-8">
         <title>INFOrmations - Seu Canal de Informações Sobre Tecnologia</title>
         <!-- Compiled and minified CSS -->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
         <link rel="stylesheet" href="css/edicaocss.css">
          <!-- Compiled and minified JavaScript -->
