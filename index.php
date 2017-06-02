@@ -30,7 +30,7 @@ include("admin/conexao.php")
         </div>   
         <!--<div class="container">-->
             <?php
-                    $sql_code = "SELECT * FROM noticias.noticias";
+                    $sql_code = "SELECT * FROM noticias.noticias WHERE publica = true";
                     //$sql_tag = "SELECT * FROM noticias.tags";
                     $sql_query = $mysqli->query($sql_code) or die ($mysqli->error);
                     //$sql_query_tag = $mysqli->query($sql_tag) or die ($mysqli->error);
