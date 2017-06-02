@@ -60,10 +60,6 @@ include("admin/conexao.php")
                                                     //echo ("id noticia".$row['id_noticias']."-> id_tag_noticia".$teste['id_noticia']." ");
                                                     if($row['id_noticias'] == $teste['id_noticia']){
                                                         echo("<a class='chip'>#".$teste['nome_tag']."</a>");
-                                                    }else{
-                                                        //echo (" BREAK id noticia".$row['id_noticias']."-> id_tag_noticia".$teste['id_noticia']." ");
-                                                       // break;
-                                                        
                                                     }   
                                                 }   
                                 echo("      </div>
