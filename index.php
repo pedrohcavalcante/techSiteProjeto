@@ -28,8 +28,12 @@ include("admin/conexao.php")
         </div>   
         <div class="container">
             <?php
-                    $sql = "SELECT id, titulo, noticias, link FROM noticias";
-                    $result = ($connect->query($sql));
+                    $sql_code = "SELECT * FROM noticias.noticias";
+                    //$sql_tag = "SELECT * FROM noticias.tags";
+                    $sql_query = $mysqli->query($sql_code) or die ($mysqli->error);
+                    //$sql_query_tag = $mysqli->query($sql_tag) or die ($mysqli->error);
+                    //$sql_tag_dados = $sql_query_tag->fetch_assoc();
+                    //$tamanho_rows = $sql_query_tag->num_rows;
                    // $row = $result->fetch_assoc();
                     /*if ($result->num_rows > 0){
                         while ($row = $result->fetch_assoc()){
@@ -39,25 +43,38 @@ include("admin/conexao.php")
                         echo ("0 results");
                     }*/
                     echo (" <div class='row'>");
-                    while ($row = $result->fetch_assoc()){
+                    while ($row = $sql_query->fetch_assoc()){
                      
                     for ( $i = 0; $i < 1; $i++){
                         echo("<div class='col s12 m6'>
-                            <div class='card darken-1'>
-                                <div class='card-content'>
-                                    <span class='card-title'>".$row['titulo']."</span>
-                                    <p>".$row['noticias']."</p>
-                                </div>
-                                <div class='card-action'>
-                                    <a href='".$row['link']."'>Ler Matéria</a>
-                                    <a class='chip'>#tag</a>
+                                <div class='card darken-1'>
+                                    <div class='card-content'>
+                                        <span class='card-title'>".$row['titulo']."</span>
+                                        <p>".$row['noticias']."</p>
+                                    </div>
+                                            <div class='card-action'>
+                                                <a href='".$row['link']."'>Ler Matéria</a>");
+                                                $sql_tag = "SELECT * FROM noticias.tags WHERE id_noticia = '$row[id_noticias]'";
+                                                $sql_query_tag = $mysqli->query($sql_tag) or die ($mysqli->error);
+                                                while ($teste = $sql_query_tag->fetch_assoc()){
+                                                    //echo ("id noticia".$row['id_noticias']."-> id_tag_noticia".$teste['id_noticia']." ");
+                                                    if($row['id_noticias'] == $teste['id_noticia']){
+                                                        echo("<a class='chip'>#".$teste['nome_tag']."</a>");
+                                                    }else{
+                                                        //echo (" BREAK id noticia".$row['id_noticias']."-> id_tag_noticia".$teste['id_noticia']." ");
+                                                       // break;
+                                                        
+                                                    }   
+                                                }   
+                                echo("      </div>
                                 </div>
                             </div>
-                        </div>
-                        ");
+                        "); 
+                                     }
+                              
                     }
                     
-                    }
+                    
                     echo("</div>");
             ?>
         </div>      
@@ -65,5 +82,5 @@ include("admin/conexao.php")
 </html>
 
 <?php
-mysqli_close($connect);
+mysqli_close($mysqli);
 ?>
