@@ -9,6 +9,7 @@ include("admin/conexao.php")
         <title>INFOrmations - Seu Canal de Informações Sobre Tecnologia</title>
         <!-- Compiled and minified CSS -->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="admin/materialize/js/materialize.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
         <link rel="stylesheet" href="css/edicaocss.css">
          <!-- Compiled and minified JavaScript -->
@@ -27,7 +28,7 @@ include("admin/conexao.php")
                 </div>
             </nav>
         </div>   
-        <div class="container">
+        <!--<div class="container">-->
             <?php
                     $sql_code = "SELECT * FROM noticias.noticias";
                     //$sql_tag = "SELECT * FROM noticias.tags";
@@ -43,11 +44,13 @@ include("admin/conexao.php")
                     }else{
                         echo ("0 results");
                     }*/
+                    //echo (" <div class='row'>");
                     echo (" <div class='row'>");
                     while ($row = $sql_query->fetch_assoc()){
                      
                     for ( $i = 0; $i < 1; $i++){
-                        echo("<div class='col s12 m6'>
+                        
+                        echo("<div class='col s6'>
                                 <div class='card darken-1'>
                                     <div class='card-content'>
                                         <span class='card-title'>".$row['titulo']."</span>
@@ -60,7 +63,7 @@ include("admin/conexao.php")
                                                 while ($teste = $sql_query_tag->fetch_assoc()){
                                                     //echo ("id noticia".$row['id_noticias']."-> id_tag_noticia".$teste['id_noticia']." ");
                                                     if($row['id_noticias'] == $teste['id_noticia']){
-                                                        echo("<a class='chip'>#".$teste['nome_tag']."</a>");
+                                                        echo("<a class='chip' href='http://localhost:8080/tags/'".$teste['nome_tag'].">#".$teste['nome_tag']."</a>");
                                                     }   
                                                 }   
                                 echo("      </div>
@@ -74,7 +77,7 @@ include("admin/conexao.php")
                     
                     echo("</div>");
             ?>
-        </div>      
+        <!--</div>      -->
     </body> 
 </html>
 
