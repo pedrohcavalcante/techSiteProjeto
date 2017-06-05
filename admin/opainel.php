@@ -59,10 +59,10 @@ if(array_key_exists("id_update", $_GET)){
         </div>
         <div class="col s9">
             <?php 
-            echo("<table><thead>
+            echo("<table class='highlightresponsive-table'><thead>
           <tr>
               <th>Título</th>
-              <th>Noticia</th>
+              <th class='center2'>Noticia</th>
               <th>Ações</th>
           </tr>
         </thead>");
@@ -84,8 +84,8 @@ if(array_key_exists("id_update", $_GET)){
                 }
             echo ('</tbody></table>');
              ?>
-             <div class='center2'><i class='small material-icons' >thumb_up</i>Matéria Publicada
-            <i class='small material-icons'>thumb_down</i>Matéria Escondida</div>
+             <div class='center2'><i class='small material-icons' >thumb_up</i>: Matéria Publicada
+            <i class='small material-icons'>thumb_down</i>: Matéria Escondida</div>
         </div>
     </div>
     
