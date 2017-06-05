@@ -14,6 +14,10 @@ nav{
 
 }
 
+ul li a{
+    text-decoration: none;
+    color: black;
+}
 .img_status{
     width: 0.6em;
     height: 0.6em;
@@ -27,8 +31,9 @@ a:hover{
     color: #b8e6fa;
 }
 
+
 .leftRow{
     width: 100%;
     height: 100%;
-    background-color: #095573;
+    background-color: grey;
 }

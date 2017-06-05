@@ -1,13 +1,17 @@
 <?php
 include('proteger.php');
-include ('conexao.php');
 protect();
+include ('conexao.php');
+
 
 $sql_code = "SELECT nome_admin FROM noticias.admin WHERE id_admin = '$_SESSION[admin]'";
-$sql_code_new = "SELECT * FROM noticias.noticias WHERE id_admin = '$_SESSION[admin]'";
-$sql_code_new_query = $mysqli->query($sql_code_new) or die ($mysqli->error);
 $sql_query = $mysqli->query($sql_code) or die ($mysqli->error);
 $row = $sql_query->fetch_assoc();
+
+$sql_code_new = "SELECT * FROM noticias.noticias WHERE id_admin = '$_SESSION[admin]'";
+$sql_code_new_query = $mysqli->query($sql_code_new) or die ($mysqli->error);
+
+
 
 if(array_key_exists("id", $_GET)){
     $sql_update = "UPDATE noticias.noticias SET publica = false WHERE id_noticias = '$_GET[id]'";
@@ -50,11 +54,11 @@ if(array_key_exists("id_update", $_GET)){
     
     <div class="row ">
         <div class="col s3 leftRow">
-            <ul>
-                <li>Notícias</li>
-                <li>Escrever Notícia</li>
-                <li>Rascunho</li>
-                <li>Sobre</li>
+            <ul class="collection">
+                <li class="collection-item active"><a href="">Notícias</a></li>
+                <li class="collection-item"><a href="escrevernew.php">Escrever Notícia</a></li>
+                <li class="collection-item"><a href="cadastroconteudista.php">Cadastrar Conteudista</a></li>
+                <!--<li class="collection-item"><a href="">Sobre</a></li>-->
             </ul>
         </div>
         <div class="col s9">

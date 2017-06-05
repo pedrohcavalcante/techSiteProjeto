@@ -41,8 +41,10 @@ imagem longblob,
 FOREIGN KEY (id_admin) REFERENCES noticias.admin(id_admin)
 );
 
+SELECT * FROM noticias;
 
 
+SELECT * FROM admin;
 
 INSERT INTO admin(nome_admin, senha_admin) VALUES ('pedro', md5(nome_admin));
 INSERT INTO admin(nome_admin, senha_admin) VALUES ('root', md5(nome_admin));
