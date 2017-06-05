@@ -2,8 +2,8 @@
 
 $host = 'localhost';
 $username = 'root';
-$password = 'teste';
-$banco = 'testes';
+$password = 'testes';
+$banco = 'noticias';
 //https://www.youtube.com/watch?v=Zjz4hy6iG1o
 $mysqli = new mysqli($host, $username, $password, $banco);
 
