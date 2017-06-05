@@ -9,9 +9,10 @@ include("admin/conexao.php")
         <title>INFOrmations - Seu Canal de Informações Sobre Tecnologia</title>
         <!-- Compiled and minified CSS -->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="admin/materialize/js/materialize.min.js"></script>
+        <!--<script type="text/javascript" src="admin/materialize/js/materialize.min.js"></script> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
         <link rel="stylesheet" href="css/edicaocss.css">
+        <script src="javascript/public.js" type="text/javascript"></script>
          <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     </head>
@@ -19,12 +20,17 @@ include("admin/conexao.php")
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                        <a href="#" class="brand-logo right"><bold>INFO</bold>rmations</a>
+                    <a href="#" class="brand-logo right"><bold>INFO</bold>rmations</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
                         <li class="active"><a href="#">Início</a></li>
                         <li><a href="#">Tecnologia</a></li>
                         <li><a href="#">Segurança</a></li>
-                    </ul> 
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo"> 
+                        <li class="active"><a href="#">Início</a></li>
+                        <li><a href="#">Tecnologia</a></li>
+                        <li><a href="#">Segurança</a></li>
                 </div>
             </nav>
         </div>   

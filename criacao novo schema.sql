@@ -2,6 +2,13 @@ DROP SCHEMA IF EXISTS noticias;
 CREATE SCHEMA noticias;
 USE noticias;
 
+DROP TABLE IF EXISTS admin;
+CREATE TABLE admin(
+id_admin INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome_admin varchar(50) NOT NULL,
+senha_admin varchar(50) NOT NULL
+);
+
 DROP TABLE IF EXISTS noticias;
 create table noticias(
 noticias varchar(5000) not null,
@@ -17,13 +24,6 @@ id_admin int not null,
 publica bool,
 primary key (id_noticias),
 FOREIGN KEY (id_admin) REFERENCES noticias.admin(id_admin)
-);
-
-DROP TABLE IF EXISTS admin;
-CREATE TABLE admin(
-id_admin INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nome_admin varchar(50) NOT NULL,
-senha_admin varchar(50) NOT NULL
 );
 
 DROP TABLE IF EXISTS tags;
