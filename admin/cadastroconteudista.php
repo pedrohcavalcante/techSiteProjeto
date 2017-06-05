@@ -46,7 +46,7 @@ if(isset($_POST['email']) && strlen($_POST['email']) > 0){
         <div class="col s3 leftRow">
             <ul class="collection">
                 <li class="collection-item"><a href="opainel.php">Notícias</a></li>
-                <li class="collection-item"><a href="">Escrever Notícia</a></li>
+                <li class="collection-item"><a href="escrevernew.php">Escrever Notícia</a></li>
                 <!--<li class="collection-item"><a href="">Rascunho</a></li>-->
                 <li class="collection-item active"><a href="cadastroconteudista.php">Cadastrar Conteudista</a></li>
             </ul>
