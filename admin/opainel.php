@@ -9,7 +9,17 @@ $sql_code_new_query = $mysqli->query($sql_code_new) or die ($mysqli->error);
 $sql_query = $mysqli->query($sql_code) or die ($mysqli->error);
 $row = $sql_query->fetch_assoc();
 
+if(array_key_exists("id", $_GET)){
+    $sql_update = "UPDATE noticias.noticias SET publica = false WHERE id_noticias = '$_GET[id]'";
+    $sql_query_update = $mysqli->query($sql_update) or die ($msqli->error);
+    echo "<script>location.href = 'opainel.php';</script>";
+}
 
+if(array_key_exists("id_update", $_GET)){
+    $sql_update = "UPDATE noticias.noticias SET publica = true WHERE id_noticias = '$_GET[id_update]'";
+    $sql_query_update = $mysqli->query($sql_update) or die ($msqli->error);
+    echo "<script>location.href = 'opainel.php';</script>";
+}
 
 
 ?>
@@ -29,7 +39,7 @@ $row = $sql_query->fetch_assoc();
     <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo right"><bold>INFO</bold>rmations</a>
+                    <a href="#" class="brand-logo right">Admin</a>
                     <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>-->
                     <div id="nav-mobile" class="left hide-on-med-and-down">
                         <div class="active"><a href="#"><img class="circle responsive-img" src="img/avatar1.png" alt="avatar"><?php echo ("Bem Vindo, ".$row['nome_admin']."!"); ?></a>      <a href='logout.php'>Sair</a></div>
@@ -53,25 +63,29 @@ $row = $sql_query->fetch_assoc();
           <tr>
               <th>Título</th>
               <th>Noticia</th>
-              <th>Publicado</th>
+              <th>Ações</th>
           </tr>
         </thead>");
             echo("<tbody>");
                 while ($noticias = $sql_code_new_query->fetch_assoc()){
-                    echo (" <tr>
-                                <td>".$noticias['titulo']."</td>
-                                <td>".$noticias['noticias']."</td>");
-                                if($noticias['publica']){
-                                    echo ('<td><i class="small material-icons ">thumb_up</i></td>');
+                    echo (' <tr>
+                                <td>'.$noticias['titulo'].'</td>
+                                <td>'.$noticias['noticias'].'</td>');
+
+                                if ($noticias['publica']){
+                                    echo("<td><div id='imagem'><a href='opainel.php?id=".$noticias['id_noticias']."'><i class='small material-icons'>thumb_up</i></a></div></td>");
                                 }else{
-                                    echo("<td><i class='small material-icons'>thumb_down</i></td>");
+                                    echo("<td><div id='imagem'><a href='opainel.php?id_update=".$noticias['id_noticias']."'><i class='small material-icons'>thumb_down</i></a></div></td>");
                                 }
-                            echo ("</tr>");
+                                
+                            echo("</tr>");
+
                             
                 }
-            echo ("</tbody></table>");
+            echo ('</tbody></table>');
              ?>
-             
+             <div class='center2'><i class='small material-icons' >thumb_up</i>Matéria Publicada
+            <i class='small material-icons'>thumb_down</i>Matéria Escondida</div>
         </div>
     </div>
     

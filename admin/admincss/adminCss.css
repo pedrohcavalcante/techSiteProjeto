@@ -5,12 +5,19 @@
     border-radius: 0.3em;
 }
 
-.test{
-}
 nav{
     background-color: #095573;
 }
 
+.center2{
+    text-align: center;
+
+}
+
+.img_status{
+    width: 0.6em;
+    height: 0.6em;
+}
 .circle{
     display: inline-block;
     width: 2.5em;
