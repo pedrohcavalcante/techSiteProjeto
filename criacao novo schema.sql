@@ -34,15 +34,25 @@ nome_tag varchar(20) NOT NULL,
 FOREIGN KEY (id_noticia) REFERENCES noticias.noticias (id_noticias)
 );
   
+DROP TABLE IF EXISTS fotoadmin;
+CREATE TABLE fotoadmin(
+id_admin INT PRIMARY KEY NOT NULL,
+imagem longblob,
+FOREIGN KEY (id_admin) REFERENCES noticias.admin(id_admin)
+);
+
+
 
 
 INSERT INTO admin(nome_admin, senha_admin) VALUES ('pedro', md5(nome_admin));
+INSERT INTO admin(nome_admin, senha_admin) VALUES ('root', md5(nome_admin));
 
 INSERT into noticias(noticias, titulo, id_noticias, link, descricao, id_admin, publica) values ('teste 1', 'teste titulo', 1, 'http://localhost:8080/projetositeinfo/', 'HELLO WORLD0', 1, true);
 INSERT into noticias(noticias, titulo, id_noticias, link, descricao, id_admin, publica) values ('teste 2', 'teste titulo 2', 2, 'http://localhost:8080/projetositeinfo/', 'HELLO WORLD1', 1, true);
 INSERT into noticias(noticias, titulo, id_noticias, link, descricao, id_admin, publica) values ('teste 3', 'teste titulo 3', 3, 'http://localhost:8080/projetositeinfo/', 'HELLO WORLD2', 1, true);
 INSERT into noticias(noticias, titulo, id_noticias, link, descricao, id_admin, publica) values ('teste 4', 'teste titulo 4', 4, 'http://localhost:8080/projetositeinfo/', 'HELLO WORLD3', 1, true);
 INSERT into noticias(noticias, titulo, id_noticias, link, descricao, id_admin, publica) values ('teste 5', 'teste titulo', 5, 'http://localhost:8080/projetositeinfo/', 'HELLO WORLD05', 1, false);
+INSERT into noticias(noticias, titulo, id_noticias, link, descricao, id_admin, publica) values ('teste 5', 'teste titulo', 6, 'http://localhost:8080/projetositeinfo/', 'HELLO WORLD05', 2, false);
 
 INSERT INTO tags(id_noticia, nome_tag) VALUES (1, "tag1noticia1");
 INSERT INTO tags(id_noticia, nome_tag) VALUES (1, "tag2noticia1");
