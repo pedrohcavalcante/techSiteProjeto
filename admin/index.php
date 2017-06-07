@@ -12,7 +12,7 @@
         $_SESSION['usuario'] = $mysqli->escape_string($_POST['usuario']);
         $_SESSION['senha'] = md5($_POST['senha']);
         //echo "session user session senha";
-        $sql_code = "SELECT id_admin, nome_admin, senha_admin FROM noticias.admin WHERE nome_admin = '$_SESSION[usuario]'";
+        $sql_code = "SELECT id_admin, nome_admin, usuario_admin, email_admin, senha_admin FROM noticias.admin WHERE usuario_admin = '$_SESSION[usuario]'";
         $sql_query = $mysqli->query($sql_code) or die ($mysqli->error);
         $dado = $sql_query->fetch_assoc();
         $total = $sql_query->num_rows;

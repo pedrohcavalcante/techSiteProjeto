@@ -6,8 +6,13 @@ DROP TABLE IF EXISTS admin;
 CREATE TABLE admin(
 id_admin INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nome_admin varchar(50) NOT NULL,
+usuario_admin varchar(50) NOT NULL,
+email_admin varchar(40) NOT NULL,
 senha_admin varchar(50) NOT NULL
 );
+
+INSERT INTO admin(nome_admin, usuario_admin, email_admin, senha_admin) VALUES ('pedro henrique', 'pedro', 'pedro@pedro', md5(usuario_admin));
+INSERT INTO admin(nome_admin, usuario_admin, email_admin, senha_admin) VALUES ('root','root', 'root@root', md5(usuario_admin));
 
 DROP TABLE IF EXISTS noticias;
 create table noticias(
@@ -46,8 +51,6 @@ SELECT * FROM noticias;
 
 SELECT * FROM admin;
 
-INSERT INTO admin(nome_admin, senha_admin) VALUES ('pedro', md5(nome_admin));
-INSERT INTO admin(nome_admin, senha_admin) VALUES ('root', md5(nome_admin));
 
 INSERT into noticias(noticias, titulo, id_noticias, link, descricao, id_admin, publica) values ('teste 1', 'teste titulo', 1, 'http://localhost:8080/projetositeinfo/', 'HELLO WORLD0', 1, true);
 INSERT into noticias(noticias, titulo, id_noticias, link, descricao, id_admin, publica) values ('teste 2', 'teste titulo 2', 2, 'http://localhost:8080/projetositeinfo/', 'HELLO WORLD1', 1, true);

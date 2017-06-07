@@ -9,11 +9,6 @@ $sql_code = "SELECT nome_admin FROM noticias.admin WHERE id_admin = '$_SESSION[a
 $sql_query = $mysqli->query($sql_code) or die ($mysqli->error);
 $row = $sql_query->fetch_assoc();
 
-if(isset($_POST['email']) && strlen($_POST['email']) > 0){
-
-    $sql_cadastro = "INSERT INTO noticias.admin(nome_admin, senha_admin) VALUES ('pedro', 'pedro')";
-}
-
 
 ?>
 
@@ -53,21 +48,25 @@ if(isset($_POST['email']) && strlen($_POST['email']) > 0){
         </div>
         <div class="col s9">
             <div class="row">
-                <form class="col s12" name="formCadastroCont" action="" method="POST">
+                <form class="col s12" name="formCadastroCont" action="insertConteudista.php" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
-                    <input  id="first_name" type="text" class="validate">
-                    <label for="first_name">Nome</label>
+                    <input  id="nome" type="text" class="validate">
+                    <label for="nome">Nome</label>
                     </div>
                     <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Sobrenome</label>
+                    <input  id="usuario" type="text" class="validate">
+                    <label for="usuario">Usuario</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s6">
                     <input id="email" type="email" class="validate">
                     <label for="email">Email</label>
+                    </div>
+                    <div class="input-field col s6">
+                    <input id="password" type="password" class="validate">
+                    <label for="email">Senha</label>
                     </div>
                 </div>
                 <button type='submit' class='waves-effect waves-light btn right' value='Login'>Cadastrar</button>
