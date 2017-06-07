@@ -7,7 +7,7 @@ $texto = $_POST['textPublicacao'];
 $titulo = $_POST['inputTitulo'];
 $print = $_POST['publicarBool'];
 
-$link = str_replace(' ','-',$titulo);
+$link = strtolower(str_replace(' ','-',$titulo));
 
 if ($print == 1){
     $print=true;
