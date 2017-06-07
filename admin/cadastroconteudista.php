@@ -51,21 +51,21 @@ $row = $sql_query->fetch_assoc();
                 <form class="col s12" name="formCadastroCont" action="insertConteudista.php" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
-                    <input  id="nome" type="text" class="validate">
+                    <input  id="nome" name="nome" type="text" class="validate">
                     <label for="nome">Nome</label>
                     </div>
                     <div class="input-field col s6">
-                    <input  id="usuario" type="text" class="validate">
+                    <input  id="usuario" name="usuario" type="text" class="validate">
                     <label for="usuario">Usuario</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                    <input id="email" type="email" class="validate">
+                    <input id="email" type="email" name="email" class="validate">
                     <label for="email">Email</label>
                     </div>
                     <div class="input-field col s6">
-                    <input id="password" type="password" class="validate">
+                    <input id="password" type="password" name="password" class="validate">
                     <label for="email">Senha</label>
                     </div>
                 </div>
