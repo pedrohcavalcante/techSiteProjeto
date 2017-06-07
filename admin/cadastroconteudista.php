@@ -53,7 +53,7 @@ if(isset($_POST['email']) && strlen($_POST['email']) > 0){
         </div>
         <div class="col s9">
             <div class="row">
-                <form class="col s12" name="formCadastroCont" action"" method="POST">
+                <form class="col s12" name="formCadastroCont" action="" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
                     <input  id="first_name" type="text" class="validate">

@@ -44,17 +44,35 @@ $row = $sql_query->fetch_assoc();
                 </ul>
             </div>
             <div class="col s9">
-                <form>
-                    <textarea name="editor1" id="editor1" rows="10" cols="80">
-            </textarea>
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'editor1' );
-            </script>
-            <br>
-            <button type='submit' class='waves-effect waves-light btn right' value='Login'>Cadastrar</button>
+                <form name='formCadastroTexto' action='insertNoticia.php' method='POST'>
+                <br>
+                <div class="row">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="inputTitulo" type="text" name="inputTitulo" data-length="200">
+                            <label for="inputTitulo">Título</label>
+                        </div>
+                    </div>
+                </div>
+                    <textarea name="textPublicacao" id="textPublicacao" rows="10" cols="80" >
+                    </textarea>
+                    <script>
+                        CKEDITOR.replace( 'textPublicacao' );
+                    </script>
+                    <br>
+                    <button type='submit' class='waves-effect waves-light btn right' value='Login'>Cadastrar</button>
+                    <div class="switch">
+                        <p>Publica</p>
+                        <p>
+                            <input name="publicarBool" type="radio" id="test1" class='with-gap' checked value=1 />
+                            <label for="test1">Sim</label>
+
+                            <input name="publicarBool" type="radio" id="test2" class='with-gap' value=0 />
+                            <label for="test2">Não</label>
+                        </p>
+                    </div>
                 </form>
+            </div>
         </div>
     </body>
 </html>
